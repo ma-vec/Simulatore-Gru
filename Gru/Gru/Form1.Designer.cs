@@ -40,13 +40,18 @@
             gancio_img = new PictureBox();
             labelH_fissa = new Label();
             label_Hgancio = new Label();
+            pictureBoxEgg = new PictureBox();
+            labelhmin_fissa = new Label();
+            labelhmax_fissa = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cavo_img).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gancio_img).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEgg).BeginInit();
             SuspendLayout();
             // 
             // buttonUp
             // 
+            buttonUp.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonUp.Location = new Point(34, 257);
             buttonUp.Name = "buttonUp";
             buttonUp.Size = new Size(127, 48);
@@ -57,6 +62,7 @@
             // 
             // buttonDown
             // 
+            buttonDown.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonDown.Location = new Point(34, 343);
             buttonDown.Name = "buttonDown";
             buttonDown.Size = new Size(127, 48);
@@ -67,6 +73,8 @@
             // 
             // buttonReset
             // 
+            buttonReset.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonReset.ForeColor = Color.IndianRed;
             buttonReset.Location = new Point(183, 308);
             buttonReset.Name = "buttonReset";
             buttonReset.Size = new Size(87, 38);
@@ -91,9 +99,11 @@
             // 
             // buttonApplica
             // 
+            buttonApplica.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonApplica.ForeColor = Color.ForestGreen;
             buttonApplica.Location = new Point(34, 125);
             buttonApplica.Name = "buttonApplica";
-            buttonApplica.Size = new Size(127, 23);
+            buttonApplica.Size = new Size(127, 29);
             buttonApplica.TabIndex = 5;
             buttonApplica.Text = "Applica";
             buttonApplica.UseVisualStyleBackColor = true;
@@ -145,12 +155,43 @@
             label_Hgancio.Size = new Size(0, 15);
             label_Hgancio.TabIndex = 12;
             // 
+            // pictureBoxEgg
+            // 
+            pictureBoxEgg.Image = (Image)resources.GetObject("pictureBoxEgg.Image");
+            pictureBoxEgg.Location = new Point(694, 335);
+            pictureBoxEgg.Name = "pictureBoxEgg";
+            pictureBoxEgg.Size = new Size(100, 107);
+            pictureBoxEgg.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxEgg.TabIndex = 13;
+            pictureBoxEgg.TabStop = false;
+            // 
+            // labelhmin_fissa
+            // 
+            labelhmin_fissa.AutoSize = true;
+            labelhmin_fissa.Location = new Point(173, 44);
+            labelhmin_fissa.Name = "labelhmin_fissa";
+            labelhmin_fissa.Size = new Size(204, 15);
+            labelhmin_fissa.TabIndex = 14;
+            labelhmin_fissa.Text = "Altezza min. piano di camapagna (m)";
+            // 
+            // labelhmax_fissa
+            // 
+            labelhmax_fissa.AutoSize = true;
+            labelhmax_fissa.Location = new Point(173, 94);
+            labelhmax_fissa.Name = "labelhmax_fissa";
+            labelhmax_fissa.Size = new Size(92, 15);
+            labelhmax_fissa.TabIndex = 15;
+            labelhmax_fissa.Text = "Altezza max (m)";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1085, 639);
+            ClientSize = new Size(1085, 735);
+            Controls.Add(labelhmax_fissa);
+            Controls.Add(labelhmin_fissa);
+            Controls.Add(pictureBoxEgg);
             Controls.Add(label_Hgancio);
             Controls.Add(labelH_fissa);
             Controls.Add(gancio_img);
@@ -168,6 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)cavo_img).EndInit();
             ((System.ComponentModel.ISupportInitialize)gancio_img).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEgg).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -185,5 +227,8 @@
         private PictureBox gancio_img;
         private Label labelH_fissa;
         private Label label_Hgancio;
+        private PictureBox pictureBoxEgg;
+        private Label labelhmin_fissa;
+        private Label labelhmax_fissa;
     }
 }

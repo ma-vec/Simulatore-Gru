@@ -5,6 +5,7 @@ namespace Gru
         Gru gru;
         Comando radiocomando;
         const int deltaAltezza = 10; //differenza nuova altezza in px
+        const int deltapxUovo = 56;
         int altezzaMetri;
 
         public Form1()
@@ -37,7 +38,7 @@ namespace Gru
         private void AggiornaForm()
         {
             gancio_img.Top = gru.AltezzaAttuale; // Imposta la posizione Y dell'immagine
-            label_Hgancio.Text = gru.ConversioneMetri(gru.AltezzaAttuale).ToString();
+            label_Hgancio.Text = (gru.ConversioneMetri(gru.AltezzaAttuale)).ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -45,6 +46,7 @@ namespace Gru
             gru.AltezzaAttuale = gru.AltezzaMaxNominale; // Imposta l'altezza iniziale
             textBoxHMax.Text = gru.ConversioneMetri(gru.AltezzaMaxNominale).ToString();
             textBoxHMin.Text = gru.ConversioneMetri(gru.AltezzaMinNominale).ToString();
+            pictureBoxEgg.Top = gru.AltezzaMinNominale + deltapxUovo;
 
             AggiornaForm();
         }
@@ -52,24 +54,31 @@ namespace Gru
         private void buttonApplica_Click(object sender, EventArgs e)
         {
             int mHmax;
-            if (int.TryParse(textBoxHMax.Text, out mHmax) && mHmax<=38)
+            if (int.TryParse(textBoxHMax.Text, out mHmax) && mHmax <= 38)
             {
                 gru.AltezzaMaxNominale = gru.Conversionepx(mHmax);
             }
             else
             {
+                textBoxHMax.Text = 38.ToString();
                 MessageBox.Show("Inserisci un'altezza minore di 38 m.", "Altezza max errata");
             }
 
             int mHmin;
             if (int.TryParse(textBoxHMin.Text, out mHmin) && mHmin >= 0)
             {
-                gru.AltezzaMinNominale = gru.Conversionepx(mHmin);
+
+                gru.AltezzaMinNominale = (gru.Conversionepx(mHmin));
+                pictureBoxEgg.Top = gru.AltezzaMinNominale + deltapxUovo;
+
             }
             else
             {
+                textBoxHMin.Text = 0.ToString();
                 MessageBox.Show("Inserisci un'altezza maggiore di 0 m.", "Altezza minima errata");
             }
         }
+
+
     }
 }

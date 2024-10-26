@@ -61,7 +61,7 @@ namespace Gru
         }
         public void abbassaGru(int deltaH)
         {
-            if(altezzaAttuale < altezzaMinNominale)
+            if(altezzaAttuale < (altezzaMinNominale))
                 altezzaAttuale += deltaH;
         }
         public void riportoSicurezza()
